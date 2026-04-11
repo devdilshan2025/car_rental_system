@@ -2,7 +2,15 @@ package edu.icet.model.entity;
 
 import edu.icet.model.UserRole;
 import jakarta.persistence.*;
+import lombok.*;
 
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
+@Entity
+@Table(name = "users")
 public class UserEntity {
 
     @Id
