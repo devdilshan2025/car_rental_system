@@ -1,9 +1,7 @@
 package edu.icet.model.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import edu.icet.model.UserRole;
+import jakarta.persistence.*;
 
 public class UserEntity {
 
@@ -19,5 +17,7 @@ public class UserEntity {
     @Column(nullable = false)
     private String password;
 
-    private String role;
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private UserRole role;
 }
