@@ -23,9 +23,9 @@ public class SecurityConfig {
         http
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/api/v1/auth/**").permitAll() // Login/Register හැමෝටම
-                        .requestMatchers(HttpMethod.GET, "/api/v1/car/get-all").permitAll() // කාර් බලන්න හැමෝටම
-                        .anyRequest().authenticated() // අනිත් හැම දේකටම Token එක ඕනේ
+                        .requestMatchers("/api/v1/auth/**").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/api/v1/car/get-all").permitAll()
+                        .anyRequest().authenticated()
                 );
         return http.build();
     }
