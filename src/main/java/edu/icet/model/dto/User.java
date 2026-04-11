@@ -1,6 +1,7 @@
 package edu.icet.model.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import edu.icet.model.UserRole;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
@@ -22,5 +23,5 @@ public class User {
     private String password;
 
     @NotBlank(message = "Role is required")
-    private String role;
+    private UserRole role;
 }
