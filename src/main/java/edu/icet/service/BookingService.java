@@ -7,4 +7,5 @@ import java.util.List;
 public interface BookingService {
     void createBooking(Booking bookingDTO);
     List<Booking> getAllBookings();
+    void returnCar(Integer bookingId);
 }
