@@ -14,11 +14,11 @@ public class BookingEntity {
     @Column(name = "booking_id")
     private Integer bookingId;
 
-    @ManyToOne // බොහෝ බුකින්ස් එක් යූසර් කෙනෙකුට තිබිය හැක
+    @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
     private UserEntity user;
 
-    @ManyToOne // බොහෝ බුකින්ස් එක් කාර් එකකට තිබිය හැක
+    @ManyToOne
     @JoinColumn(name = "car_id", nullable = false)
     private CarEntity car;
 
