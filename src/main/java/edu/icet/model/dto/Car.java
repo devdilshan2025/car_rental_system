@@ -1,5 +1,6 @@
 package edu.icet.model.dto;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,5 +17,6 @@ public class Car {
     private Double dailyRate;
     private String transmission;
     private String fuelType;
+    @JsonProperty("isAvailable")
     private Boolean isAvailable;
 }
