@@ -25,7 +25,9 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/api/v1/auth/**").permitAll()
                         .requestMatchers(HttpMethod.GET, "/api/v1/car/get-all").permitAll()
+                        .requestMatchers("/api/v1/booking/**").permitAll()
                         .anyRequest().authenticated()
+
                 );
         return http.build();
     }
