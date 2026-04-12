@@ -21,7 +21,8 @@ public class CarServiceImpl implements CarService {
     @Override
     public List<Car> getAllCars() {
 
-        List<CarEntity> entities = carRepository.findAll();
+
+        List<CarEntity> entities = carRepository.findAllByOrderByCarIdAsc();
 
 
         return entities.stream()
