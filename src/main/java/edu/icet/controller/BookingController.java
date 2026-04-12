@@ -26,4 +26,10 @@ public class BookingController {
     public List<Booking> getAllBookings() {
         return bookingService.getAllBookings();
     }
+
+    @PutMapping("/return/{bookingId}")
+    public ResponseEntity<String> returnCar(@PathVariable Integer bookingId) {
+        bookingService.returnCar(bookingId);
+        return ResponseEntity.ok("Car returned successfully and is now available!");
+    }
 }
