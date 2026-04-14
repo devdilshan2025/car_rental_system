@@ -40,14 +40,15 @@ public class AuthServiceImpl implements AuthService {
             throw new RuntimeException("Invalid Password");
         }
 
-
         String token = jwtService.generateToken(user.getEmail(), user.getName(), user.getRole().name());
+
 
         return AuthResponseDTO.builder()
                 .token(token)
                 .name(user.getName())
                 .email(user.getEmail())
                 .role(user.getRole().name())
+                .userId(user.getUserId())
                 .build();
     }
 }
