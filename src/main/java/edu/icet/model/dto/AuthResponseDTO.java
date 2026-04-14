@@ -14,4 +14,5 @@ public class AuthResponseDTO {
     private String name;
     private String email;
     private String role;
+    private Long userId; // ඔයාගේ User DTO එකේ වගේම මෙතනත් Long පාවිච්චි කරන්න
 }
