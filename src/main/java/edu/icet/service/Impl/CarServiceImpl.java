@@ -20,11 +20,7 @@ public class CarServiceImpl implements CarService {
 
     @Override
     public List<Car> getAllCars() {
-
-
         List<CarEntity> entities = carRepository.findAllByOrderByCarIdAsc();
-
-
         return entities.stream()
                 .map(entity -> modelMapper.map(entity, Car.class))
                 .collect(Collectors.toList());
@@ -32,13 +28,17 @@ public class CarServiceImpl implements CarService {
 
     @Override
     public void addCar(Car carDTO) {
-
         carRepository.save(modelMapper.map(carDTO, CarEntity.class));
     }
 
     @Override
     public void deleteCar(Integer id) {
-        carRepository.deleteById(id);
+
+        if (carRepository.existsById(id)) {
+            carRepository.deleteById(id);
+        } else {
+            throw new RuntimeException("Car not found to delete!");
+        }
     }
 
     @Override
@@ -50,9 +50,7 @@ public class CarServiceImpl implements CarService {
 
     @Override
     public void updateCar(Car carDTO) {
-
         if (carRepository.existsById(carDTO.getCarId())) {
-
             carRepository.save(modelMapper.map(carDTO, CarEntity.class));
         } else {
             throw new RuntimeException("Car not found to update!");
